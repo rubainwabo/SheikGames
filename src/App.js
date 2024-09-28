@@ -1,13 +1,18 @@
 import { createRoot } from "react-dom/client";
-import Game from "./components/Game.js";
+import Game from "./components/Game.jsx";
+import { GameStateContextProvider } from "./context/gameStateContext.jsx";
 
 const App = () => {
   return (
     <div className="App">
-      <Game numberOfPlayers={4} />
+      <Game />
     </div>
   );
 }
 
 const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(
+  <GameStateContextProvider>
+    <App />
+  </GameStateContextProvider>
+);

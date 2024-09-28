@@ -1,7 +1,7 @@
 import React from "react";
-import Card from "./Card.js";
+import Card from "./Card.jsx";
 
-const Player = ({ player, index, gameState, setGameState, setTurnTimeLeft }) => {
+const Player = ({ player, index, setTurnTimeLeft }) => {
   return player.qualified ? (
     <div>
       <h3>Player {index + 1} qualified for the next round!</h3>
@@ -16,9 +16,6 @@ const Player = ({ player, index, gameState, setGameState, setTurnTimeLeft }) => 
             card={card}
             cardIndex={cardIndex}
             index={index}
-            gameState={gameState}
-            setGameState={setGameState}
-            setTurnTimeLeft={setTurnTimeLeft}
           />
         ))}
       </div>

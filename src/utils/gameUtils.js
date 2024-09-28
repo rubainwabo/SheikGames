@@ -72,3 +72,14 @@ export function initializeGameState(numberOfPlayers) {
       direction: 1,
     };
   }
+
+  export function findNextPlayer(currentPlayerIndex, players) {
+    let nextPlayerIndex = (currentPlayerIndex + 1 + players.length) % players.length;
+    
+    // Skip over players who are qualified
+    while (players[nextPlayerIndex].qualified) {
+      nextPlayerIndex = (nextPlayerIndex + 1 + players.length) % players.length;
+    }
+    
+    return nextPlayerIndex;
+  }
